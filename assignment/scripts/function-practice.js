@@ -67,17 +67,18 @@ console.log('isPositive - should say false', isPositive(-3));
 //    array is empty, return `undefined`.
 
 
-let myArr = ['apple', 'oranges', 'grapes'];
+//let myArr = ['apple', 'oranges', 'grapes'];
 
-function getLast(myArr) {
-  if(myArr.length === 0){
+function getLast(myArrIn) {
+  if(myArrIn.length === 0){
     return undefined;
   }else{
-    return myArr[myArr.length - 1];
+    return myArrIn[myArrIn.length - 1];
     
   }
 }
-getLast();
+getLast(['apple', 'oranges', 'grapes']);
+
 
 
 
@@ -88,11 +89,7 @@ getLast();
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 
 let list=[1, 2, 3, 4, 5, 6];
-/**
- * 
- * @param {number} value 
- * @returns 
- */
+
 /*function findValue(value){
   for (let i = 0; i < list.length; i++) {
   if (list[i] === value){
@@ -105,29 +102,45 @@ let list=[1, 2, 3, 4, 5, 6];
 }
 findValue(4);
 */
-function findValue(value){
+function findValue(value , listIn){
   console.log("infunction");
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < listIn.length; i++) {
     console.log("item");
-    if(list[i] === value){
+    if(listIn[i] === value){
       console.log("found item");
       console.log("true");
+      return true;
     }else{
       console.log("item not found");
       console.log("false");
-    }
-    
-    
+    } 
   }
+  return false;
 }
-findValue(2);
+findValue(2 , [1,2,4,6,8, 9 ]);
+findValue(4 , [1,5,6,7,8,]);
+
+/*function findValue(value , listIn){
+  for (let i = 0; i < listIn.length; i++) {
+    if(value === listIn[i]){
+      console.log("found value" , value);
+      return true;
+    }else{
+      console.log("value not found", value);
+    }
+  }
+  return false;
+}
+findValue(2,[3,4,5,6,7,])
+*/
+
 
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
+function isFirstLetter(letterIn, stringIn) {
 
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
